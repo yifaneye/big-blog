@@ -18,3 +18,8 @@ Delete the line below if you're just getting started and want to remove the welc
     {{ page.body | richtext }}
 
 {% endblock content %}
+
+{% for blog_page in page.get_children %}
+    <h3><a href="{% pageurl blog_page %}">{{ blog_page.title }}</a></h3>
+    {{ blog_page.specific.body | richtext }}
+{% endfor %}

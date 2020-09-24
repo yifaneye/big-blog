@@ -21,6 +21,6 @@ class BlogIndexPage(Page):
 
 
 class BlogPage(Page):
-    date = models.DateField("Post date")
-    summary = models.TextField()
-    body = RichTextField(blank=True)
+    date = models.DateField("Post date", blank=True, null=True)
+    summary = models.TextField(blank=True, null=True)
+    body = RichTextField(blank=True, null=True)
