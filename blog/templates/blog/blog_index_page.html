@@ -1,0 +1,9 @@
+{% load wagtailcore_tags %}
+<h1>{{ page.title }}</h1>
+<div class="intro">{{ page.body | richtext }}</div>
+<h2>{{ page.subtitle }}</h2>
+{% for post in page.get_children %}
+    <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+    {{ post.specific.date }}
+    {{ post.specific.summary }}
+{% endfor %}
